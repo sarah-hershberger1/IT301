@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="main-style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT301 Labs and Projects</title>
@@ -20,16 +21,17 @@
         </header>
 <body>
     <br>
-    <section>
+    <section id="lab-section">
         <h2>List of labs</h2>
         <ol>
-            <li>Lab 1 - My first page</li>
-            <li>Lab 2 - Labs webpage</li>
-            <li><a href="https://github.com/sarah-hershberger1/IT301/blob/main/style.css">Lab 3 - Nested List with Selectors</a></li>
+            <li><span id="lab"> Lab 1:</span> Create and publish your website using GitHub.</li>
+            <li><span id="lab"> Lab 2:</span> Add more content to your website.</li>
+            <li><a href="https://github.com/sarah-hershberger1/IT301/blob/main/style.css"><span id="lab"> Lab 3:</span> Add hyperlinks to your website. </a></li>
+            <li><span id="lab"> Lab 4:</span>Style the content of your website using CSS.</li>
         </ol>
         </section>
     <section>
-        <h2>Article Section</h2>
+        <h2><span class="article">Article Section</span></h2>
         <article>
         <p>Here is a section in the website.</p>
         <p>All of this is in an article. <br> want another link? click here, it's not spam <a href="https://jmusports.com/sports/football/schedule"><h6> I promise</h6></a></p>
@@ -40,7 +42,7 @@
     <br>
     <p><i>Text below everything.</i></p>
     <h6>so tiny!</h6>
-    <p>V  here is a silly cat below  V</p>
+    <p>V  here is a <span class=silly-cat>silly cat</span> below  V</p>
 
     <img src="https://i.ytimg.com/vi/SQJrYw1QvSQ/maxresdefault.jpg" alt="this is a kitty" style="width: 200px; height: auto;">
         </article>
@@ -61,7 +63,7 @@
     <section>
     <aside>
         <p> Here is the aside section with random information.</p>
-        <ul>
+        <ul id="about-me">
             <li><p>My name is Sarah and I like cats and dogs. I'm from northern Virginia. I am an IT major and will be a CIS minor soon.</p></li>
             <li><p>I like to read, draw, listen to and collect music, including burning CDs, etc. I also like to play sports.
                 I've played volleyball, basketball, lacrosse, dance, boxing, taekwondo, and horseback riding. </p></li>
