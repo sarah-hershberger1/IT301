@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.silly-cat{
+    font-weight:700;
+    font-style:italic;
+}
+
+#lab{
+    background-color: yellow;
+    font-style: oblique;
+}
+
+#lab-section{
+    border: 2px solid gray;
+    border-radius: 4px;
+    border-color:gray;
+    background-color: white;
+}
+
+#about-me{
+    list-style-type: armenian;
+}
+
+.article{
+text-align: center;
+}
