@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+
+        body{
+            display: flex;
+            height: 100vh;
+        }
+        #left{
+            display: flex;
+            height: 100vh;
+            width: 90px;
+            flex-shrink: 0;
+            background-color: orange;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        #right{
+            display: flex;
+            height: 100vh;
+            flex-wrap: wrap;
+            overflow-y: auto;
+        }
+        img{
+            height: 100px;
+            flex-grow: 1;
+            padding: 2px;
+        }
+
+        p{
+            align-items: left;
+            font-size:40px;
+            margin: 4px;
+        }
+
+        #trash{
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="left">
+        <p>&#x1F4F7;</p>
+        <p>&#x1F5C4;&#xfe0f;</p>
+        <p>&#x2764;&#xfe0f;</p>
+        <p id="trash">&#x1F5D1;&#xfe0f;</p>
+    </div>
+
+    <div id="right">
+        <img src="https://picsum.photos/100/100">
+        <img src="https://picsum.photos/110/100">
+        <img src="https://picsum.photos/120/100">
+        <img src="https://picsum.photos/130/100">
+        <img src="https://picsum.photos/140/100">
+        <img src="https://picsum.photos/150/100">
+        <img src="https://picsum.photos/160/100">
+        <img src="https://picsum.photos/170/100">
+        <img src="https://picsum.photos/180/100">
+        <img src="https://picsum.photos/190/100">
+        <img src="https://picsum.photos/200/100">
+        <img src="https://picsum.photos/210/100">
+        <img src="https://picsum.photos/220/100">
+        <img src="https://picsum.photos/230/100">
+        <img src="https://picsum.photos/240/100">
+        <img src="https://picsum.photos/250/100">
+        <img src="https://picsum.photos/260/100">
+        <img src="https://picsum.photos/270/100">
+        <img src="https://picsum.photos/280/100">
+        <img src="https://picsum.photos/290/100">
+        <img src="https://picsum.photos/300/100">
+    </div>
+
+</body>
+</html>
