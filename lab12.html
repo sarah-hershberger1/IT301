@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting and Calculator</title>
+</head>
+<body>
+    <form action="#">
+        <label for="name">Name</label>
+        <input type="text" id="name">
+        <button id= "select" type="button">Submit</button>
+        <br><br>
+    </form>
+    <p id="greeting"></p>
+
+    <form action="#">
+        <label for="num1">Num 1</label>
+        <input type="number" id="num1">
+        <br>
+        <label for="num2">Num 2</label>
+        <input type="number" id="num2">
+        <br>
+        <br>
+    </form>
+    <p id="numbers"></p>
+
+    <form action="#">
+        Addition:
+        <input type="radio" name="funcs" value="add">
+        <br>
+        Subtraction:
+        <input type="radio" name="funcs" value="sub">
+        <br>
+        Multiplication:
+        <input type="radio" name="funcs" value="mul">
+        <br>
+        Division:
+        <input type="radio" name="funcs" value="div">
+        <br>
+        <br>
+    </form>
+    <p id="func"></p>
+
+    <p id="result">Result</p>
+    <button id="calculate" type="button">Calculate</button>
+    <br>
+    <button id="clear" type="button">Clear</button>
+
+    <script>
+        const greeting = document.getElementById('greeting');
+        const name = document.getElementById('name');
+        const numbers = document.getElementById('numbers');
+        const result = document.getElementById('result');
+        const func = document.getElementById('func');
+        const a = document.getElementById('num1');
+        const b = document.getElementById('num2');
+        //not sure how i want to do the results
+
+        document.getElementById('select').addEventListener('click', function(){
+            greeting.textContent = `Welcome to the calculator, ${name.value}`;
+            console.log(typeof name.value);
+        })
+
+        document.getElementById('calculate').addEventListener('click', function(){
+            const func = document.querySelector(`[name = funcs]:checked`)
+            console.log(func.value);
+            if (func.value == "add") {
+                result.textContent = add(Number(num1.value), Number(num2.value));
+            }
+            if (func.value == "sub") {
+                result.textContent = sub(Number(num1.value), Number(num2.value));
+            }
+            if (func.value == "mul") {
+                result.textContent = mul(Number(num1.value), Number(num2.value));
+            }
+            if (func.value == "div") {
+                result.textContent = div(Number(num1.value), Number(num2.value));
+
+            }
+        });
+
+        document.getElementById('clear').addEventListener('click', function(){
+            document.querySelectorAll('form').forEach(function(form){
+                form.reset();
+            });
+        });
+
+        //funcs
+        const add = function(a,b) {return a + b};
+        const sub = function(a,b) {return a - b};
+        const mul = function(a,b) {return a * b};
+        const div = function(a,b) {return a / b};
+
+    </script>
+
+</body>
+</html>
