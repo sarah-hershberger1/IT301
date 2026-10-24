@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RhythmiKitty - Home</title>
+    <link rel="stylesheet" href="css/RhythmiKitty.css">
+</head>
+<body>
+    <header>
+        <h1>
+            <span class="music-note1">♫</span>
+            <span class="wobbly-title"><span>R</span><span>h</span><span>y</span><span>t</span><span>h</span><span>m</span><span>i</span><span>K</span><span>i</span><span>t</span><span>t</span><span>y</span></span>
+            <span class="music-note2">♫</span>
+        </h1>
+
+        <img id="headphone-cat" src="images/cat.png" alt="Black cat wearing headphones">
+
+        <!-- Allows visitors to pause the moving title and music notes. -->
+            <label class="animation-control" for="pause-animation">
+            <input type="checkbox" id="pause-animation">
+            Pause animation
+        </label>
+
+        <nav>
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="Search.html">Search</a></li>
+                <li><a href="MoreSongInfo.html">More Song Info</a></li>
+                <li><a href="Discover.html">Discover</a></li>
+                <li><a href="MusicForCats.html">Music for Cats</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <p>Hi animal and music lovers, welcome to my website! It is currently being built.</p>
+        <h2>Some Interesting Songs</h2>
+
+        <div class="song-area">
+            <button
+                type="button"
+                class="leftArrow"
+                aria-label="Scroll songs left"
+                onclick="document.querySelector('.songs').scrollBy(-250, 0)">
+                ➜
+            </button>
+
+            <div class="songs">
+                <div class="song">
+                    <!--eventually there will be album images with .lrc files when hovering over,
+        and the user will be able to rate the song themselves too.-->
+                    <h3>Song Title</h3>
+                    <div class="song-box">Album cover.</div>
+                    <p>A quick description of the song.</p>
+                    <p>★★★★☆ — 4/5</p>
+                    <a class="details-button" href="MoreSongInfo.html">More details</a>
+                </div>
+
+                <div class="song">
+                    <h3>Song Title</h3>
+                    <div class="song-box">Album cover.</div>
+                    <p>A quick description of the song.</p>
+                    <p>★★★★☆ — 4/5</p>
+                    <a class="details-button" href="MoreSongInfo.html">More details</a>
+                </div>
+
+                <div class="song">
+                    <h3>Song Title</h3>
+                    <div class="song-box">Album cover.</div>
+                    <p>A quick description of the song.</p>
+                    <p>★★★★☆ — 4/5</p>
+                    <a class="details-button" href="MoreSongInfo.html">More details</a>
+                </div>
+
+                <div class="song">
+                    <h3>Song Title</h3>
+                    <div class="song-box">Album cover.</div>
+                    <p>A quick description of the song.</p>
+                    <p>★★★★☆ — 4/5</p>
+                    <a class="details-button" href="MoreSongInfo.html">More details</a>
+                </div>
+
+                <div class="song">
+                    <h3>Song Title</h3>
+                    <div class="song-box">Album cover.</div>
+                    <p>A quick description of the song.</p>
+                    <p>★★★★☆ — 4/5</p>
+                    <a class="details-button" href="MoreSongInfo.html">More details</a>
+                </div>
+            </div>
+
+            <button
+                type="button"
+                class="rightArrow"
+                aria-label="Scroll songs right"
+                onclick="document.querySelector('.songs').scrollBy(250, 0)">
+                ➜
+            </button>
+        </div>
+
+        <h2>About RhythmiKitty</h2>
+        <p>
+            I made this website because I like both cats and music. I have a whole music library downloaded on my homelab
+            using my Raspberry Pi 3, on PlexAmp, with proper tagging and .lrc files. I thought it would be a good idea
+            to make this into a website.
+        </p>
+    </main>
+    <!-- Shared page footer. -->
+    <footer>
+        <p>RhythmiKitty by Sarah Hershberger</p>
+    </footer>
+</body>
+</html>

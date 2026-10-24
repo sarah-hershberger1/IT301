@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RhythmiKitty - Search</title>
+    <link rel="stylesheet" href="css/RhythmiKitty.css">
+</head>
+<body>
+    <!-- Skip the repeated header and navigation when using a keyboard. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header>
+        <h1>
+            <span class="music-note1">♫</span>
+            <span class="wobbly-title"><span>R</span><span>h</span><span>y</span><span>t</span><span>h</span><span>m</span><span>i</span><span>K</span><span>i</span><span>t</span><span>t</span><span>y</span></span>
+            <span class="music-note2">♫</span>
+        </h1>
+
+        <img id="headphone-cat" src="images/cat.png" alt="Black cat wearing headphones">
+
+        <!-- Allows visitors to pause the moving title and music notes. -->
+            <label class="animation-control" for="pause-animation">
+            <input type="checkbox" id="pause-animation">
+            Pause animation
+        </label>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="Search.html">Search</a></li>
+                <li><a href="MoreSongInfo.html">More Song Info</a></li>
+                <li><a href="Discover.html">Discover</a></li>
+                <li><a href="MusicForCats.html">Music for Cats</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="search-page" id="main-content" tabindex="-1">
+        <!--You told me that I can use AI to build the DB for now for the JS, so I did that in Search.js-->
+        <h2>Song Library</h2>
+        <p>Explore the collection by song title, artist, or genre.</p>
+
+        <div class="library-box">
+            <form id="song-search">
+                <label for="search-input">Find a song:</label>
+
+                <input
+                    type="search"
+                    id="search-input"
+                    name="search"
+                    placeholder="Title, artist, or genre"
+                    required>
+
+                <button type="submit">Search</button>
+            </form>
+
+            <p id="result-count" role="status" aria-live="polite"></p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Song Title</th>
+                            <th>Artist</th>
+                            <th>Genre</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="song-results"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/Search.js"></script>
+
+        <!-- Shared page footer. -->
+    <footer>
+        <p>RhythmiKitty by Sarah Hershberger</p>
+    </footer>
+</body>
+</html>

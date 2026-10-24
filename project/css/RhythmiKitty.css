@@ -1,0 +1,839 @@
+/*                              --MISC.--                                    */
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #84b6f3;
+    padding-bottom: 40px;
+}
+
+body p {
+    text-align: center;
+    padding-top: 2vh;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+main iframe {
+    display: block;
+    width: 100%;
+    min-height: 70vh;
+    border: none;
+}
+
+/*___________________________________________________________________________*/
+
+/*                          --IMPORTED FONTS--
+sources:
+1) https://stackoverflow.com/questions/49420166/how-do-i-properly-link-ttf-and-or-woff-files-in-my-css-and-html
+2) https://www.w3schools.com/cssref/atrule_font-face.php
+*/
+@font-face {
+    font-family: 'Adetas';
+    src: url('../fonts/Adetas.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3Regular';
+    src: url('../fonts/SourceSans/SourceSans3-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MerriweatherRegular';
+    src: url('../fonts/Merriweather_24pt-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+/*___________________________________________________________________________*/
+
+/*                      --MUSIC NOTES IN HEADER--
+ sources:
+1) https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes
+2) https://drafts.csswg.org/css-animations/#keyframes
+3) https://www.w3schools.com/cssref/atrule_keyframes.php
+4) https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-delay
+
+the first music note matches the odd letter because it's first, and the last letter is even, so their delays
+need to be roughly matched.
+*/
+
+.music-note1, .music-note2{
+    /* need inline-block because the span for the music note will be inline by default,
+    and the note can stay along with the text.*/
+    display: inline-block;
+    animation: noteMoving1 1s ease-in-out infinite;
+    color: white;
+}
+
+.music-note1 {
+    animation-delay: 0ms;
+}
+
+.music-note2 {
+    animation-delay: -100ms;
+}
+
+@keyframes noteMoving1 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.5vh);
+    }
+}
+
+@keyframes noteMoving2 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.5vh);
+    }
+}
+
+/*___________________________________________________________________________*/
+
+/*                       --WOBBY TITLE TEXT--
+sources:
+1) https://medium.com/design-bootcamp/mastering-the-wobble-how-to-create-a-css-only-elastic-text-effect-269112ebfbea
+2) https://codepen.io/queenadreena/pen/oKGyYq <- not as helpful of an article
+*/
+
+@keyframes wobbly-title {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-3px);
+    }
+    75% {
+        transform: translateY(3px);
+    }
+}
+
+.wobbly-title span {
+    display: inline-block;
+    animation: wobbly-title 1800ms linear infinite;
+}
+
+.wobbly-title span:nth-child(even) {
+    animation-delay: -100ms;
+    color: lightblue;
+}
+
+/*___________________________________________________________________________*/
+
+/*                       --CAT IMG IN HEADER--
+note: the image was generated using AI and cleaned up by me                  */
+
+#headphone-cat {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 200px;
+    height: auto;
+}
+
+/*___________________________________________________________________________*/
+
+header {
+    margin: 0;
+    padding: 0;
+    background-color: #433878;
+    color: white;
+    text-align: center;
+    padding-top: 45px;
+}
+
+/*___________________________________________________________________________*/
+
+h1 {
+    font-family: 'Adetas', Verdana, sans-serif;
+    letter-spacing: 4px;
+    color: lightsteelblue;
+}
+
+h2 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px;
+    padding-top: 30px;
+    letter-spacing: 2px;
+    color: black;
+    text-align: center;
+}
+
+/*___________________________________________________________________________*/
+/*                     --NAV. BAR--
+(will be below the kitty, a dark/deep blue, evenly spaced sections
+(with white or light blue text) that change color when you hover over them.
+sticky bar once scrolling down so just the nav bar will show.
+maybe each item in the nav bar could be in a cat paw?? or maybe have rounded
+edges + stuff??*/
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    border-radius: 2px;
+    background-color: #0e0248;
+    width: 100%;
+    min-height: 60px;
+    height: auto;
+    box-sizing: border-box;
+    font-family: 'MerriweatherRegular', sans-serif;
+    text-align: center;
+    color: lightsteelblue;
+    position: sticky;
+    top: 0;
+}
+
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+nav ul li {
+    display: flex;
+    flex-grow: 5;
+    line-height: 1.4;
+}
+
+nav ul li:not(:last-child){
+    border-right: 1px solid white;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1vw;
+    color: lightsteelblue;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: lightblue;
+    color: #0e0248;
+}
+
+
+/*___________________________________________________________________________*/
+/*                     --Side Arrows (Page 1)--
+*/
+.leftArrow,
+.rightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 5vw;
+    height: 20vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+
+    background: #433878;
+    color: white;
+    border: 2px solid black;
+    border-radius: 8px 0 0 8px;
+
+    font-family: inherit;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.leftArrow {
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.rightArrow {
+    right: 0;
+}
+
+/*___________________________________________________________________________*/
+/*                     --Songs (Page 1)--
+sources:
+1) https://ratracegrad.medium.com/horizontal-scrolling-using-flexbox-f9d16817f742
+2) https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scroll-behavior
+3) https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollBy
+*/
+
+.songs {
+    display: flex;
+    gap: 20px;
+    width: 85%;
+    margin: 0 auto;
+    overflow-x: auto; /* if content is wider than container, stay inside
+    the row and scroll. */
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.song {
+    flex: 0 0 20vw;
+    min-width: 180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    text-align: center;
+    color: black;
+    padding: 15px;
+    background: #7ba9e2;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+.song h3 {
+    width: 20vw;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: white;
+    padding: 5px;
+    background-color: #433878;
+}
+.song-box {
+    width: 20vw;
+    height: 20vw;
+    box-sizing: border-box;
+    /* everything ended up getting squeezed, so now no flex-shrink */
+    flex-shrink: 0;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.details-button {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #433878;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: smaller;
+}
+
+.details-button:hover {
+    background: #0e0248;
+}
+
+/* initially did this without song-area but then the boxes for the songs
+weren't centered with the arrows. song-area contains both the boxes and arrows now. */
+.song-area {
+    position: relative; /* so now a reference point for the arrows here */
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1vh;
+}
+
+/*___________________________________________________________________________*/
+/*                     --Search Page (Page 2)--                                    */
+.search-page main {
+    padding: 30px;
+}
+
+.search-page form {
+    max-width: 500px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.details-link {
+    font-weight: bold;
+}
+
+.search-page {
+    padding: 0 6% 40px;
+}
+/*___________________________________________________________________________*/
+/*                     --DB Stuff (Page 2)--
+sources:
+1) https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
+2) https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/tbody
+
+this section was such a pain to figure out >.<
+*/
+.library-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-top: 25px;
+    padding: 25px;
+    background: #7ba9e2;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.search-page label {
+    font-weight: bold;
+}
+
+.search-page input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.search-page button {
+    padding: 12px 20px;
+    background: #433878;
+    color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.search-page button:hover {
+    background: #0e0248;
+}
+
+.search-page #result-count {
+    padding: 0;
+    text-align: left;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.search-page table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.search-page th,
+.search-page td {
+    /*tbody for table data rows, th for heading cell, td for data cell, tr for table row*/
+    padding: 16px;
+    border: 1px solid black;
+    text-align: left;
+}
+
+.search-page th {
+    background: #433878;
+    color: white;
+}
+
+.search-page tbody tr:nth-child(even) {
+    background: #edf3ff;
+}
+
+.search-page tbody tr:hover {
+    background: #d1b6e8;
+}
+
+/*___________________________________________________________________________*/
+/*                       More Song Info (Page 3)
+sources:
+I used the same ones as in Page 2. Once again, this was a pain to make.*/
+.song-info-page {
+    width: 85%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    font-family: 'SourceSans3Regular', sans-serif;
+}
+
+.song-info-page p {
+    padding: 0;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* the album info, ik song-profile is a confusing name */
+.song-profile {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 25px;
+    padding: 25px;
+    background: #7ba9e2;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.song-info-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    max-width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background: white;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.song-information {
+    flex: 1 1 250px;
+    min-width: 0;
+}
+
+.song-information h3 {
+    padding: 10px;
+    background: #433878;
+    color: white;
+    border-radius: 8px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.song-information > p {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.song-information table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.song-information th,
+.song-information td {
+    padding: 12px;
+    border: 1px solid black;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.song-information th {
+    background: #433878;
+    color: #7ba9e2;
+}
+
+.song-info-section {
+    margin-top: 20px;
+    padding: 25px;
+    background: #7ba9e2;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.song-info-section > h3 {
+    margin-bottom: 12px;
+    color: #433878;
+    font-size: 22px;
+}
+
+.listen-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.song-info-page a {
+    color: #433878;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.song-info-page a:hover {
+    text-decoration: underline;
+}
+
+
+.song-info-back {
+    margin-top: 25px;
+    text-align: center;
+}
+
+/*___________________________________________________________________________*/
+/*                       Discover (Page 4)                                   */
+
+.discover-page {
+    width: 85%;
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: 'SourceSans3Regular', sans-serif;
+}
+
+.discover-page p {
+    padding: 0;
+    line-height: 1.6;
+}
+
+.discover-songs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.discover-song {
+    flex: 1 1 250px;
+    min-width: 0;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    background: #7ba9e2;
+    border: 2px solid black;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.discover-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 220px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.discover-song h3 {
+    color: #433878;
+    font-size: 24px;
+}
+
+.discover-artist {
+    font-weight: bold;
+}
+
+.discover-song a {
+    margin-top: auto;
+    padding-top: 12px;
+    color: #433878;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.discover-song a:hover {
+    text-decoration: underline;
+}
+
+/*___________________________________________________________________________*/
+/*                       Music for Cats (Page 5)                             */
+.cats-page {
+    width: 85%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cats-page p {
+    padding: 0;
+    margin-bottom: 18px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.cats-page a {
+    color: #433878;
+}
+
+.cat-video-list {
+    margin-top: 30px;
+    padding: 25px;
+    background: #7ba9e2;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.cat-video-list h3 {
+    margin-bottom: 10px;
+    color: #433878;
+}
+
+.cat-video {
+    padding: 20px 0;
+}
+
+.cat-video:not(:last-child) {
+    border-bottom: 1px solid #433878;
+}
+
+.cat-video h4 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.cat-video p {
+    margin: 0;
+}
+
+/*___________________________________________________________________________*/
+/*                           ACCESSIBILITY STUFF
+sources:
+1) https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion
+2) https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries
+3) https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-play-state
+4) https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has
+5) https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:checked
+*/
+
+
+/* Prevent the shared paragraph padding from squeezing song-card text. */
+.song p {
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* Shared footer styles for all five pages. */
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Keyboard navigation: the skip link appears when focused. */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 12px;
+    z-index: 10;
+
+    padding: 12px;
+    background: white;
+    color: #0e0248;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #0e0248;
+    outline-offset: 4px;
+}
+
+/* Use a lighter focus outline against the dark navigation/header. */
+header a:focus-visible,
+header input:focus-visible,
+.leftArrow:focus-visible,
+.rightArrow:focus-visible {
+    outline-color: white;
+}
+
+/* Animation pause control. */
+.animation-control {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+body:has(#pause-animation:checked) .wobbly-title span,
+body:has(#pause-animation:checked) .music-note1,
+body:has(#pause-animation:checked) .music-note2 {
+    animation-play-state: paused;
+}
+
+/* RESPONSIVE LAYOUT: navigation and content adjust for small screens. */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.25rem;
+        letter-spacing: 2px;
+    }
+
+    nav ul {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        flex: 1 1 45%;
+        justify-content: center;
+    }
+
+    nav ul li a {
+        padding: 12px;
+    }
+
+    body p {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .songs {
+        width: 76%;
+    }
+
+    .song {
+        flex: 0 0 60vw;
+        min-width: 0;
+    }
+
+    .song h3,
+    .song-box {
+        width: 100%;
+    }
+
+    .song-box {
+        height: 60vw;
+    }
+
+    .leftArrow,
+    .rightArrow {
+        width: 32px;
+        height: 100px;
+        font-size: 24px;
+    }
+
+    .discover-songs {
+        flex-direction: column;
+    }
+
+    .discover-song {
+        flex-basis: auto;
+    }
+}
+
+/* respect the visitor's reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+    .wobbly-title span,
+    .music-note1,
+    .music-note2 {
+        animation: none;
+    }
+
+    .songs {
+        scroll-behavior: auto;
+    }
+}

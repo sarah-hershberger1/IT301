@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RhythmiKitty - Discover</title>
+    <link rel="stylesheet" href="css/RhythmiKitty.css">
+</head>
+<body>
+    <!-- Skip the repeated header and navigation when using a keyboard. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header>
+        <h1>
+            <span class="music-note1">♫</span>
+            <span class="wobbly-title"><span>R</span><span>h</span><span>y</span><span>t</span><span>h</span><span>m</span><span>i</span><span>K</span><span>i</span><span>t</span><span>t</span><span>y</span></span>
+            <span class="music-note2">♫</span>
+        </h1>
+
+        <img id="headphone-cat" src="images/cat.png" alt="Black cat wearing headphones">
+
+        <!-- Allows visitors to pause the moving title and music notes. -->
+            <label class="animation-control" for="pause-animation">
+            <input type="checkbox" id="pause-animation">
+            Pause animation
+        </label>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Search.html">Search</a></li>
+                <li><a href="MoreSongInfo.html">More Song Info</a></li>
+                <li><a class="active" href="Discover.html">Discover</a></li>
+                <li><a href="MusicForCats.html">Music for Cats</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main class="discover-page" id="main-content" tabindex="-1">
+    <h2>Discover Your Next Songs</h2>
+    <p>Explore something different and find a song worth adding to your playlist.</p>
+
+    <div class="discover-songs">
+        <article class="discover-song">
+            <div class="discover-cover">Album cover</div>
+            <h3>Song Title</h3>
+            <p class="discover-artist">Artist Name</p>
+            <p>A relaxed song for studying or just want to chill.</p>
+            <a href="MoreSongInfo.html">Explore song ➜</a>
+        </article>
+
+        <article class="discover-song">
+            <div class="discover-cover">Album cover</div>
+            <h3>Song Title</h3>
+            <p class="discover-artist">Artist Name</p>
+            <p>An upbeat song for when you're feeling happy.</p>
+            <a href="MoreSongInfo.html">Explore song ➜</a>
+        </article>
+
+        <article class="discover-song">
+            <div class="discover-cover">Album cover</div>
+            <h3>Song Title</h3>
+            <p class="discover-artist">Artist Name</p>
+            <p>Something a little different.</p>
+            <a href="MoreSongInfo.html">Explore song ➜</a>
+        </article>
+    </div>
+</main>
+    <!-- Shared page footer. -->
+    <footer>
+        <p>RhythmiKitty by Sarah Hershberger</p>
+    </footer>
+</body>
+</html>
