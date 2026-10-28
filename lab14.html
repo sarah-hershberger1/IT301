@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab14: API</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .profile-card {
+            width: 300px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: lightblue;
+        }
+        .profile-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            border: 2px solid black;
+        }
+    </style>
+
+    <h1>
+        Random User Generator
+    </h1>
+        <div class='profile-card'>
+            <img id='picture' alt="User profile picture">
+            <h2 id='name'></h2>
+            <p id='email'></p>
+            <p id='phone'></p>
+        </div>
+
+        <button id='generate'>Generate a profile</button>
+
+    <script>
+        function getUser () {
+            fetch('https://randomuser.me/api/')
+                .then(response => response.json())
+                .then(data => {
+                    const user = data.results[0]
+
+                    document.getElementById('picture').src = user.picture.large;
+                    document.getElementById('name').textContent = user.name.first + ' ' + user.name.last;
+                    document.getElementById('email').textContent = user.email;
+                    document.getElementById('phone').textContent = user.phone;
+                })
+                .catch(error => console.log(error));
+        }
+
+        document.getElementById('generate').addEventListener('click', getUser);
+
+        getUser();
+    </script>
+</body>
+</html>
