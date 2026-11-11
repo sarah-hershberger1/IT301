@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 16: Form Validation</title>
+    <style>
+        .passwordRulesSection {
+            display: none;
+        }
+        .valid {
+            color: green;
+        }
+        .invalid {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+        <h1>Lab 16: Form Validation</h1>
+        <p>Please enter in your name, email, and password.</p>
+        <form id="form">
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+            <button id="submit">Submit</button>
+            <section class="passwordRulesSection">
+                <h2>Password rules:</h2>
+                <p>Your password must include...</p>
+                <ul class="passwordRulesList">
+                    <li>At least 6 characters</li>
+                    <li>Must include a special character</li>
+                    <li>Must include an uppercase letter (A-Z)</li>
+                </ul>
+            </section>
+        </form>
+
+    <script>
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+
+            const rules = document.querySelectorAll('.passwordRulesList li');
+
+            document.getElementById('form').addEventListener('submit', (event) => {
+                const conditionOne = password.value.length >= 6;
+                const conditionTwo = /[!@#$%^&*(),.?":{}|<>]/.test(password.value);
+                const conditionThree = /[A-Z]/.test(password.value);
+                event.preventDefault();
+
+                if (conditionOne && conditionTwo && conditionThree) {
+                  window.location.href = "success.html";
+                  console.log('Form was submitted successfully');
+                } else {
+                    alert(`Please make sure that your inputs are correct and follow the password's conditions.`)
+                    console.log('Form submission was unsuccessfully');
+                }
+            });
+
+            document.getElementById('password').addEventListener('input', () => {
+                document.querySelector('.passwordRulesSection').style.display = 'block';
+                const conditionOne = password.value.length >= 6;
+                const conditionTwo = /[!@#$%^&*(),.?":{}|<>]/.test(password.value);
+                const conditionThree = /[A-Z]/.test(password.value);
+
+                rules[0].classList.toggle('valid', conditionOne);
+                rules[0].classList.toggle('invalid', !conditionOne);
+
+                rules[1].classList.toggle('valid', conditionTwo);
+                rules[1].classList.toggle('invalid', !conditionTwo);
+
+                rules[2].classList.toggle('valid', conditionThree);
+                rules[2].classList.toggle('invalid', !conditionThree);
+            });
+
+
+        </script>
+</body>
+</html>
